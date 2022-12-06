@@ -1,0 +1,54 @@
+<!--pages/check-video/check-video.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">红色书声</view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">学习文选</view>
+  <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">党史故事</view>
+</view>
+
+<view style="height: 88rpx; background: white;"></view>
+
+<view class='list flex-col' wx:if='{{article_list.length>0}}' >
+  <navigator class='content flex-row' wx:for='{{article_list}}' data-index='{{index}}' bindtap='showDetail' style='border-bottom: {{index!=article_list.length?1:0}}px solid #F9F9F9;'>
+    <image class='s-icon flex-grow-0' src='{{item.images[0]}}'></image>
+    <view class='flex-col flex-grow-1'>
+      <text class='date flex-grow-1'>{{item.time}}</text>
+      <text class='sub-title flex-grow-1 text-multi-line'>{{item.title}}</text>
+    </view>
+  </navigator>
+</view>
+<view class='detail flex-col flex-y-center' wx:if='{{showDetail}}'>
+  <view class='title-block'>
+    <rich-text nodes='{{videoList[activeIndex].title}}'></rich-text>
+    <view class='flex-row flex-space-between subTitle'>
+      <text>{{videoList[activeIndex].time}}</text>
+      <text>{{videoList[activeIndex].source}}</text>
+    </view>
+  </view>
+  <video id="video" class='video-block' src="{{videoList[activeIndex].videoUrl}}" binderror="videoErrorCallback" bindended="videoEndCallback" danmu-list="{{danmuList}}" controls='{{false}}' enable-danmu danmu-btn enable-progress-gesture='{{false}}' />
+  <view class='htext'>*{{!videoList[activeIndex].isDisable?'观看完毕后可获得1积分':'该视频已经看过,将不会获得积分'}}</view>
+  <view class='back-btn-huge flex-x-center flex-y-center' bindtap='backBtn'>返回视频列表</view>
+  <view class='content-block'>
+    <rich-text nodes='{{videoList[activeIndex].content}}' wx:if='{{videoList[activeIndex].content != "null"}}'></rich-text>
+    <image wx:for='{{images}}' src='{{item}}'></image>
+  </view>
+</view>
+<view class='flex-col' wx:else>
+  <view class='flex-row listBlock flex-y-center' wx:for='{{videoList}}'>
+    <view class='flex-col flex-grow-1'>
+      <text class='title'>{{item.title}}</text>
+      <view class='tips'>{{!item.isDisable?'观看完毕后可获得1积分':'该视频已经看过,将不会获得积分'}}</view>
+    </view>
+    <view class='flex-grow-0'>
+      <view class='btn' data-index='{{index}}' bindtap='onClickGoBtn'>{{!item.isDisable?'立即观看':'再看一次'}}</view>
+    </view>
+  </view>
+  <view class='greyTips flex-x-center' wx:if='{{videoList.length<1}}'>
+    暂无可供观看的视频
+  </view>
+  <view class='greyTips flex-x-center' bindtap='onClickLoadMore' wx:if='{{!noMoreData}}'>
+    —— 点击加载更多 ——
+  </view>
+  <view class='greyTips flex-x-center' wx:if='{{videoList.length>0 && noMoreData}}'>
+    —— 已无更多内容 ——
+  </view>
+</view>

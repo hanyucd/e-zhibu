@@ -1,0 +1,61 @@
+<!--pages/post-tp/post-tp.wxml-->
+<form class='tp-block' bindsubmit='onClickDoneBtn'>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{displayArray}}">
+        <view class="picker">
+        {{index == -1 ? '单击选择板块' : '当前板块:' + array[index].name}}
+        </view>
+    </picker>
+
+    <view>
+        <text class='flex-grow-1 flex-x-center' style='width:100%; font-size: 13pt; color: black; margin-bottom: 16rpx; padding-bottom: 16rpx; text-align:center; margin-top:32rpx;'>文章基本信息填写</text>
+        <input class='oname' name="title" placeholder='文章标题'></input>
+        <input class='oname' name="source" placeholder='文章来源'></input>
+        <input class='oname' name="audio" placeholder='音频链接' wx:if="{{index == 5 || index == 6}}"></input>
+        <picker mode="date" bindchange="bindPickerDate" >
+            <view class="picker" style="color: {{!date?'grey':'black'}}; text-align: center;">
+            {{!date?'发布日期':'发布日期: ' + date}}
+            </view>
+        </picker>
+    </view>
+
+    <view class='toolbar' bindtap="format">
+        <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+        <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+        <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+        <i class="iconfont icon-zitishanchuxian {{formats.strike ? 'ql-active' : ''}}" data-name="strike"></i>
+        <i class="iconfont icon-zuoduiqi {{formats.align === 'left' ? 'ql-active' : ''}}" data-name="align" data-value="left"></i>
+        <i class="iconfont icon-juzhongduiqi {{formats.align === 'center' ? 'ql-active' : ''}}" data-name="align" data-value="center"></i>
+        <i class="iconfont icon-youduiqi {{formats.align === 'right' ? 'ql-active' : ''}}" data-name="align" data-value="right"></i>
+        <i class="iconfont icon-zuoyouduiqi {{formats.align === 'justify' ? 'ql-active' : ''}}" data-name="align" data-value="justify"></i>
+        <i class="iconfont icon-font {{formats.fontFamily ? 'ql-active' : ''}}" data-name="fontFamily" data-value="Pacifico"></i>
+        <i class="iconfont icon-fontsize {{formats.fontSize === '24px' ? 'ql-active' : ''}}" data-name="fontSize" data-value="24px"></i>
+
+        <i class="iconfont icon-text_color {{formats.color === '#0000ff' ? 'ql-active' : ''}}" data-name="color" data-value="#0000ff"></i>
+        <i class="iconfont icon-fontbgcolor {{formats.backgroundColor === '#00ff00' ? 'ql-active' : ''}}" data-name="backgroundColor" data-value="#00ff00"></i>
+
+        <i class="iconfont icon-undo" bindtap="undo"></i>
+        <i class="iconfont icon-redo" bindtap="redo"></i>
+
+        <i class="iconfont icon-fengexian" bindtap="insertDivider"></i>
+        <!--<i class="iconfont icon-charutupian" bindtap="insertImage"></i>-->
+        <i class="iconfont icon-format-header-1 {{formats.header === 1 ? 'ql-active' : ''}}" data-name="header" data-value="{{1}}"></i>
+        <i class="iconfont icon-zitixiabiao {{formats.script === 'sub' ? 'ql-active' : ''}}" data-name="script" data-value="sub"></i>
+        <i class="iconfont icon-zitishangbiao {{formats.script === 'super' ? 'ql-active' : ''}}" data-name="script" data-value="super"></i>
+
+    </view>
+
+    <editor id="editor" class="ql-container" placeholder="{{placeholder}}" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange" bindready="onEditorReady">
+    </editor>
+
+    <scroll-view class='uploadImgBlock' scroll-x scroll-with-animation>
+        <view wx:for='{{tempImgList}}' class='subBlock' wx:if='{{!item.isDelete}}'>
+        <image class='delete' data-id='{{index}}' src='/images/svg/delete.svg' bindtap='onDeleteImg'></image>
+        <image class='uploadImg' data-id='{{index}}' src='{{item.imgUrl}}' bindtap='onPreviewImg'></image>
+        </view>
+        <image class='uploadImg' src='/images/svg/tipUploadImg.svg' bindtap='onUpdateImg'></image>
+    </scroll-view>
+
+    <progress percent="{{uploadpProgress}}" wx:if='{{uploadpProgress!=0 && uploadpProgress != 100}}'/>
+
+    <button type='warn' form-type='submit'>发布</button>
+</form>

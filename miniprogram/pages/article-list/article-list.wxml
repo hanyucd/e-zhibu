@@ -1,0 +1,18 @@
+<!--pages/article-list/article-list.wxml-->
+<view class='list flex-col' wx:if='{{list.length>0}}'>
+  <navigator class='content flex-row' wx:for='{{list}}' data-index='{{index}}' bindtap='showDetail'
+          style='border-bottom: {{index!=list.length?1:0}}px solid #F9F9F9;'>
+    <image class='s-icon flex-grow-0' src='{{item.images[0]}}' wx:if='{{item.images.length>0}}'></image>
+    <view class='flex-col flex-grow-1'>
+      <text class='date flex-grow-1'>{{item.time}}</text>
+      <text class='sub-title flex-grow-1 text-multi-line'>{{item.title}}</text>
+      <!-- <text class='sub-content text-multi-line'>{{item.describe}}</text> -->
+    </view>
+  </navigator>
+</view>
+<view class='greyTips flex-x-center' bindtap='onClickLoadMore' wx:if='{{!noMoreData}}'>
+  —— 点击加载更多 ——
+</view>
+<view class='greyTips flex-x-center' wx:if='{{noMoreData}}'>
+  —— 已无更多内容 ——
+</view>

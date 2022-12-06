@@ -1,0 +1,4 @@
+<!--pages/online-payment/online-payment.wxml-->
+<view class='flex-x-center flex-y-center' style='height: 100%;'>
+  <image src='/images/online-payment-dev.png' mode='widthFix'></image>
+</view>

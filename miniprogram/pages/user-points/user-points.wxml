@@ -1,0 +1,39 @@
+<!--pages/user-points/user-points.wxml-->
+<view class='top-bar flex-col flex-x-center flex-y-center'>
+  <view class='cir flex-col flex-x-center flex-y-center'>
+    <view class='point' style='font-size: {{points=="正在获取"?"20pt":"26pt"}}'>{{points}}</view>
+    <text class='title'>我的积分</text>
+  </view>
+</view>
+<view class='content flex-col'>
+  <view class='htext flex-x-center' wx:if='{{list[0].length<1 && list[1].length<1 && list[2].length<1}}'>
+    暂无获取积分的记录~
+  </view>
+  <view class='flex-row subBlock flex-y-center' wx:for='{{list[0]}}'>
+    <view class='flex-col flex-grow-1'>
+      <text class='title'>{{item.content}}</text>
+      <text class='date'>{{item.uploadDate}}</text>
+    </view>
+    <view class='flex-grow-0'>
+      <text class='i-tips'>等待审核中</text>
+    </view>
+  </view>
+  <view class='flex-row subBlock flex-y-center' wx:for='{{list[1]}}'>
+    <view class='flex-col flex-grow-1'>
+      <text class='title'>{{item.content}}</text>
+      <text class='date'>{{item.uploadDate}}</text>
+    </view>
+    <view class='flex-grow-0'>
+      <text class='pass-tips'>已通过[+1积分]</text>
+    </view>
+  </view>
+  <view class='flex-row subBlock flex-y-center' wx:for='{{list[2]}}'>
+    <view class='flex-col flex-grow-1'>
+      <text class='title'>{{item.content}}</text>
+      <text class='date'>{{item.uploadDate}}</text>
+    </view>
+    <view class='flex-grow-0'>
+      <text class='deny-tips'>审核未通过</text>
+    </view>
+  </view>
+</view>

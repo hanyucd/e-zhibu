@@ -1,0 +1,21 @@
+<!--pages/user-list/user-list.wxml-->
+<view class='title-bar flex-row'>
+  <view wx:for='{{title_bar_list}}'>
+    <text>{{item}}</text>
+  </view>
+</view>
+
+<view class='content flex-col'>
+  <view class='displayBlock flex-y-center' wx:for='{{content_list}}' 
+      style='border-bottom: {{index!=list.length?1:0}}px solid #F9F9F9;'>
+    <text class='username'>{{item.username}}</text>
+    <text class='classname'>{{item.classname}}</text>
+  </view>
+</view>
+
+<view class='greyTips flex-x-center' bindtap='onClickLoadMore' wx:if='{{!noMoreData}}'>
+  —— 点击加载更多 ——
+</view>
+<view class='greyTips flex-x-center' wx:if='{{noMoreData}}'>
+  —— 已无更多内容 ——
+</view>

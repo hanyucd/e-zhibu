@@ -1,0 +1,42 @@
+<!--pages/ask-point-detail/ask-point-detail.wxml-->
+<form class='tp-block' bindsubmit='onClickDoneBtn'>
+  <input class='oname' placeholder='实践或奖项名称' maxlength='20'></input>
+  <text class='bottomTip' style='font-size: 26rpx;'>字数限制：20个字以内</text>
+
+  <picker mode="date" bindchange="bindDateChange" >
+    <view class="picker" style="color: {{!date?'grey':'black'}}; text-align: center;">
+      {{!date?'单击选择实践或获奖日期':'实践或获奖日期: ' + date}}
+    </view>
+    <text class='bottomTip' style='font-size: 26rpx;'>上半学年: 2月15日~8月15日; 下半学年: 8月16日~2月14日</text>
+  </picker>
+
+  <view class='selfcheck-block flex-col' wx:for="{{options_list}}">
+    <text class='flex-grow-1' style='font-size: 13pt; color: black; border-bottom: 1px solid #e8e8e8; margin-bottom: 16rpx; padding-bottom: 16rpx;'>{{item.title}}</text>
+    <view class='flex-row flex-wrap flex-space-around flex-grow-0'>
+      <view class='flex-row flex-y-center' bindtap='onClickCheckbox' data-index='{{index}}' data-check='{{true}}'>
+        <image class='checkbox' src="/images/svg/{{!options_list[index].checked?'checkbox':'checkbox_active'}}.svg"></image>
+        <text>是(+{{item.point}}积分)</text>
+      </view>
+      <view class='flex-row flex-y-center' bindtap='onClickCheckbox' data-index='{{index}}' data-check='{{false}}'>
+        <image class='checkbox' src="/images/svg/{{!options_list[index].checked?'checkbox_active':'checkbox'}}.svg"></image>
+        <text>否</text>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view class='uploadImgBlock' scroll-x scroll-with-animation>
+    <view wx:for='{{tempImgList}}' class='subBlock' wx:if='{{!item.isDelete}}'>
+      <image class='delete' data-id='{{index}}' src='/images/svg/delete.svg' bindtap='onDeleteImg'></image>
+      <image class='uploadImg' data-id='{{index}}' src='{{item.imgUrl}}' bindtap='onPreviewImg'></image>
+    </view>
+    <image class='uploadImg' src='/images/svg/tipUploadImg.svg' bindtap='onUpdateImg'></image>
+  </scroll-view>
+
+  <progress percent="{{uploadpProgress}}" wx:if='{{uploadpProgress!=0 && uploadpProgress != 100}}'/>
+
+  <button type='warn' open-type="getUserInfo" form-type='submit'>提交</button>
+
+  <text class='bottomTip flex-x-center'>
+    提交后需要等待审核,通过后即可获得积分
+  </text>
+</form>

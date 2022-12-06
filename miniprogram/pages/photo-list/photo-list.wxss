@@ -1,0 +1,33 @@
+/* pages/photo-list/photo-list.wxss */
+page{
+  width: 100%;
+}
+
+.title{
+  width: 220rpx;
+  padding: 8rpx 16rpx;
+  color: #fff;
+  border-radius: 32rpx;
+  margin-top: 32rpx;
+  background: #e44;
+}
+
+.mainList{
+  padding: 32rpx;
+  width: 100%;
+}
+
+.subList,
+.pic{
+  width: 178rpx;
+  height: 228rpx;
+}
+
+.subList{
+  margin-bottom: 32rpx;
+}
+
+.bigPicList,
+.bigPic{
+  margin-top: 16rpx;
+}

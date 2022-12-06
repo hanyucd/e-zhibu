@@ -1,0 +1,66 @@
+/* pages/user/user.wxss */
+page {
+  background: #F9F9F9;
+}
+
+.btnGetUser{
+  width: 256rpx;
+  height: 64rpx;
+  color: white;
+  line-height: 64rpx;
+  border: 1px solid white;
+  border-radius: 8rpx;
+  background: none !important;
+}
+
+.btnGetUser:after{
+  border: none;
+}
+
+.avatar{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 99999rpx;
+  border: 5rpx solid #fff;
+  margin: 24rpx 24rpx;
+}
+
+.userInfoBar{
+  height: 300rpx;
+  padding: 0 48rpx;
+  color: #fff;
+  background: #e54343;
+}
+
+.userInfoBar .username{
+  font-size: 13pt;
+  padding: 8rpx 16rpx;
+  border-radius: 12rpx;
+  background: #e13838;
+}
+
+.userInfoBar .o-info{
+  margin-top: 8rpx;
+  font-size: 11pt;
+  padding: 8rpx 16rpx;
+  border-radius: 12rpx;
+  background: #e13838;
+}
+
+.menu-user-item{
+  width: 100%;
+  height: 128rpx;
+  padding: 0 32rpx;
+  background: #fff;
+  margin-bottom: 1px;
+}
+
+.menu-user-item .content .m-icon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx;
+}
+
+.menu-user-item .content .text{
+  font-size: 12pt;
+}

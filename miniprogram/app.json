@@ -1,0 +1,42 @@
+{
+    "pages": [
+        "pages/prelogin/prelogin",
+        "pages/index/index",
+        "pages/user/user",
+        "pages/edu/edu",
+        "pages/show/show",
+        "pages/member-service/member-service",
+        "pages/article-manage/article-manage",
+        "pages/photo-list/photo-list",
+        "pages/photo-detail/photo-detail",
+        "pages/check-video/check-video",
+        "pages/user-points/user-points",
+        "pages/post-tp/post-tp",
+        "pages/user-list/user-list",
+        "pages/w-apply-list/w-apply-list",
+        "pages/w-test/w-test",
+        "pages/article-detail/article-detail",
+        "pages/ask-point-list/ask-point-list",
+        "pages/ask-point-detail/ask-point-detail",
+        "pages/article-list/article-list",
+        "pages/multi-article-list/multi-article-list",
+        "pages/online-payment/online-payment",
+        "pages/userConsole/userConsole",
+        "pages/storageConsole/storageConsole",
+        "pages/databaseGuide/databaseGuide",
+        "pages/addFunction/addFunction",
+        "pages/deployFunctions/deployFunctions",
+        "pages/chooseLib/chooseLib"
+    ],
+    "window": {
+        "backgroundColor": "#fff",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#ee4444",
+        "navigationBarTitleText": "掌上e支部",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json",
+    "navigateToMiniProgramAppIdList": [
+      "wxebadf544ddae62cb"
+    ]
+}

@@ -1,0 +1,60 @@
+<!--pages/user/user.wxml-->
+<include src="/commons/navbar/navbar" />
+
+<view class='after-navbar'>
+  <view class='userInfoBar flex-x-center flex-y-center'>
+    <view class='flex-row flex-space-between flex-y-center' style='width:100%;'>
+      <view class='flex-col'>
+        <text class='username'>{{userInfo.username}}</text>
+        <text class='o-info'>{{userInfo.stid}}</text>
+        <text class='o-info'>{{userInfo.classname}}</text>
+        <text class='o-info'>{{userInfo.part_member?'预备党员':'入党积极分子'}}
+        </text>
+      </view>
+      <image class="avatar" src="{{avatarUrl}}" />
+    </view>
+  </view>
+
+  <navigator class='menu-user-item flex-row flex-y-center' wx:if='{{menu_user_list.length>0&&index>1}}' wx:for='{{menu_user_list}}' 
+            url='{{item.nav_url}}'>
+    <view class='content flex-row flex-grow-1 flex-y-center'>
+      <image class='m-icon' src='{{item.image_url}}'></image>
+      <text class='text'>{{item.text}}</text>
+    </view>
+    <image class='more-icon flex-grow-0' src='/images/svg/more.svg'></image>
+  </navigator>
+
+  <navigator class='menu-user-item flex-row flex-y-center' style='margin-top: 32rpx;' wx:if='{{isAdmin>0}}' 
+            url='/pages/article-list/article-list?nav=7'>
+    <view class='content flex-row flex-y-center'>
+      <text class='text' style='color: red;'>查看支部信箱</text>
+    </view>
+  </navigator>
+
+  <navigator class='menu-user-item flex-row flex-y-center' style='margin-top: 32rpx;' wx:if='{{isAdmin>0}}' 
+            >
+    <view class='content flex-row flex-y-center'>
+      <text class='text' style='color: red;'>积分申请 审核系统</text>
+    </view>
+  </navigator>
+
+  <navigator class='menu-user-item flex-row flex-y-center' style='margin-top: 32rpx;' wx:if='{{isAdmin>0}}' 
+            url='/pages/w-apply-list/w-apply-list'>
+    <view class='content flex-row flex-y-center'>
+      <text class='text' style='color: red;'>E网青声 审核系统</text>
+    </view>
+  </navigator>
+
+  <navigator class='menu-user-item flex-row flex-y-center' style='margin-top: 32rpx;' wx:if='{{isAdmin>0}}' 
+            url='/pages/article-manage/article-manage'>
+    <view class='content flex-row flex-y-center'>
+      <text class='text' style='color: red;'>小程序文章管理系统</text>
+    </view>
+  </navigator>
+
+  <navigator class='menu-user-item flex-row flex-y-center' bindtap='onClickLogout' style='margin-top: 32rpx;'>
+    <view class='content flex-row flex-y-center'>
+      <text class='text' style='color: red;'>退出登录</text>
+    </view>
+  </navigator>
+</view>

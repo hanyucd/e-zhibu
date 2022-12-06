@@ -1,0 +1,23 @@
+<!--pages/prelogin/prelogin.wxml 8724461974 391574352149682544-->
+
+<view wx:if='{{!logged}}'>
+  <view class='title'>登陆</view>
+
+  <view class='subTitle'>通过学号与身份证,登陆掌上e支部</view>
+
+  <form class='prelogin-border' bindsubmit='onClickLoginBtn'>
+    <input type="number" name="xh" placeholder="学号" />
+    <input type="idcard" name="sfzh" placeholder="身份证号" />
+
+    <button type='warn' open-type="getUserInfo" form-type='submit' bindgetuserinfo="onGetUserInfo">登陆</button>
+  </form>
+
+  <text class='bottomTip flex-x-center'>
+    登陆后还需要同意授权,否则将会登陆失败
+  </text>
+</view>
+
+<view class='autoLogin flex-x-center flex-y-center flex-col' wx:if='{{logged}}'>
+  <image src='/images/svg/autoLoginIcon.svg'></image>
+  <text>验证中</text>
+</view>

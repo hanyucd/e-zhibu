@@ -1,0 +1,44 @@
+/* pages/ask-point-list/ask-point-list.wxss */
+.group-list{
+  width: 100%;
+  background: #F9F9F9;
+}
+
+.group-list .title{
+  height: 96rpx;
+  padding: 0 16rpx;
+  font-size: 13pt;
+}
+
+.group-list .sub-list{
+  width: 100%;
+  height: 128rpx;
+  padding: 0 32rpx;
+  background: #fff;
+}
+
+.group-list .sub-list .g-icon{
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 16rpx;
+}
+
+.group-list .sub-list .text{
+  font-size: 11pt;
+}
+
+.cube{
+  width: 32rpx;
+  height: 32rpx;
+  background: rgb(250, 116, 116);
+  margin-left: 16rpx;
+  border-radius: 14rpx;
+}
+
+.top-tip-box{
+  height: 200rpx;
+  margin: 32rpx;
+  padding: 32rpx;
+  border-radius: 16rpx;
+  background: rgb(244, 255, 245);
+}

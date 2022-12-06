@@ -1,0 +1,14 @@
+<!--pages/group-show/group-show.wxml-->
+
+<view class='img_p flex-x-center flex-y-center'>
+  <image src='{{list[selected].image_url}}' bindload="imageLoad"></image>
+</view>
+
+<view class='toggle-border flex-row flex-y-center flex-space-between' wx:if='{{list.length>1}}'>
+  <view bindtap='toggleLeft'>
+    <image class='toggle-icon' src='/images/svg/left.svg'></image>
+  </view>
+  <view bindtap='toggleRight'>
+    <image class='toggle-icon' src='/images/svg/right.svg'></image>
+  </view>
+</view>

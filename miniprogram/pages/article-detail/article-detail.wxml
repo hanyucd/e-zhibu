@@ -1,0 +1,27 @@
+<!--pages/article-detail/article-detail.wxml-->
+<view class='title-block'>
+    <rich-text nodes='{{list.title}}'></rich-text>
+    <view class='flex-row flex-space-between subTitle'>
+        <text>{{list.time == 'NaN-NaN-NaN' ? '' : list.time}}</text>
+        <text>{{list.source}}</text>
+    </view>
+    <view class='delBtn' wx:if='{{isAdmin > 0 && isArticle}}' bindtap='deleteArticle'>
+        删除此文章
+    </view>
+</view>
+<view class='content-block'>
+    <view class='audio-block flex-y-center flex-col' wx:if='{{list.audio}}'>
+        <view class='btn flex-x-center flex-y-center' wx:if='{{!isPlayAudio}}' bindtap='playAudio'>
+            <image class='btn-icon' src='/images/svg/play.svg'></image>
+            播放音频
+        </view>
+        <view class='btn flex-x-center flex-y-center' wx:if='{{isPlayAudio}}' bindtap='pauseAudio'>
+            <image class='btn-icon' src='/images/svg/pause.svg'></image>
+            暂停播放
+        </view>
+        <slider bindchanging="sliderChanging" block-size='22' value='{{currentAudioPlayProcess}}' max="{{audioLength}}" style="width: 90%;" show-value/>
+        <text class='grey-tips-small'>播放进度(秒)</text>
+    </view>
+    <rich-text nodes='{{list.content}}'></rich-text>
+    <image class='pic' wx:for='{{list.images}}' src='{{item}}' mode='widthFix'></image>
+</view>

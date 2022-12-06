@@ -1,0 +1,29 @@
+/* pages/group-show/group-show.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  background: #222;
+}
+
+.img_p{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.img_p image{
+  width: 100%;
+  height: 78%;
+}
+
+.toggle-border{
+  width: 100%;
+  height: 100%;
+  padding: 0 32rpx;
+  position: relative;
+}
+
+.toggle-icon{
+  width: 128rpx;
+  height: 128rpx;
+}

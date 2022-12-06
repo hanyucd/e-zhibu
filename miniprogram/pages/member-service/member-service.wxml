@@ -1,0 +1,33 @@
+<!--pages/edu/edu.wxml-->
+<view style="background: white;">
+  <swiper class="banner" autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" wx:if='{{edu_banner_list.length>0}}'>
+    <block wx:for="{{edu_banner_list}}">
+      <swiper-item>
+        <navigator url="{{item.nav_url}}">
+          <view class="slide-title">{{item.text}}</view>
+          <image src="{{item.image_url}}" class="slide-image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='grid-edu flex-row flex-y-center flex-space-around' wx:if='{{main_fun_list.length>0}}'>
+    <navigator class='flex-col flex-y-center flex-grow-1' wx:for='{{main_fun_list}}' url='{{item.nav_url}}' style='border-right: {{index==3?0:1}}px solid #F9F9F9;'>
+      <image class='g-icon' src='{{item.image_url}}'></image>
+      <text class='text' style='color: #000000'>{{item.text}}</text>
+    </navigator>
+  </view>
+
+  <view class='study-list flex-col' wx:if='{{child_fun_list.length>0}}'>
+    <view class='title flex-row flex-x-center flex-y-center'>
+      <view>党员百宝箱</view>
+    </view>
+  </view>
+
+  <view class='father-list' wx:if='{{child_fun_list.length>0}}'>
+    <navigator class='son-item' wx:for='{{child_fun_list}}' url='{{item.nav_url}}' style='border-right: 1px solid #F9F9F9;'>
+      <image class='g-icon' src='{{item.image_url}}'></image>
+      <text class='text' style='color: #000000'>{{item.text}}</text>
+    </navigator>
+  </view>
+</view>

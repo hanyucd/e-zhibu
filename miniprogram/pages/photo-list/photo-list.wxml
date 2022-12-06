@@ -1,0 +1,17 @@
+<!--pages/photo-list/photo-list.wxml-->
+<view class='flex-col flex-y-center'>
+  <text class='title flex-x-center'>{{tipText}}</text>
+  <view wx:if="{{filterType != 3}}">
+    <view class='mainList flex-row flex-wrap flex-space-around'>
+      <view class='subList' wx:for='{{list}}'>
+        <image class='pic' src='{{item.image_url}}' data-index='{{index}}' bindtap='showDetail' bindload="imageLoad"></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{filterType == 3}}">
+    <view class='bigPicList flex-col'>
+      <image class='bigPic' src='{{item.image_url}}' data-index='{{index}}' 
+            wx:for='{{list}}' bindtap='showBigDetail' bindload="imageLoad" mode='widthFix'></image>
+    </view>
+  </view>
+</view>

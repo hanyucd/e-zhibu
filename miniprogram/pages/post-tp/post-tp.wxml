@@ -1,0 +1,21 @@
+<!--pages/post-tp/post-tp.wxml-->
+<form class='tp-block' bindsubmit='onClickDoneBtn'>
+  <textarea type="number" name="content" placeholder="请输入内容" maxlength="-1" style='text-align: {{type!=2?"center":"left"}};'
+          value='{{type==2?"姓名:\\n\\n电话:\\n\\nQQ:\\n\\n邮箱:\\n\\n内容:\\n":""}}' />
+
+  <scroll-view class='uploadImgBlock' scroll-x scroll-with-animation>
+    <view wx:for='{{tempImgList}}' class='subBlock' wx:if='{{!item.isDelete}}'>
+      <image class='delete' data-id='{{index}}' src='/images/svg/delete.svg' bindtap='onDeleteImg'></image>
+      <image class='uploadImg' data-id='{{index}}' src='{{item.imgUrl}}' bindtap='onPreviewImg'></image>
+    </view>
+    <image class='uploadImg' src='/images/svg/tipUploadImg.svg' bindtap='onUpdateImg'></image>
+  </scroll-view>
+
+  <progress percent="{{uploadpProgress}}" wx:if='{{uploadpProgress!=0 && uploadpProgress != 100}}'/>
+
+  <button type='warn' open-type="getUserInfo" form-type='submit'>提交</button>
+
+  <text class='bottomTip flex-x-center'>
+    {{type!=2?'提交后需要等待审核,通过后即可获得积分':'提交后可以在【我的-我的咨询/投诉】查看'}}
+  </text>
+</form>

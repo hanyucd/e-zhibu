@@ -1,0 +1,15 @@
+<view class="navbar flex-row">
+  <navigator wx:for="{{_navbar}}"
+              class="flex-grow-1 flex-y-center"
+              url="{{item.url}}"
+              open-type="redirect"
+              style="background: {{item.active?'#DD3F3F':'#E44'}}">
+    <view>
+        <image class="navbar-icon"
+                src="{{item.active?item.active_icon:item.icon}}"></image>
+        <view class="navbar-text"
+              style="color: {{item.active?item.active_color:item.color}};">{{item.text}}
+        </view>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,126 @@
+/* pages/w-apply-list/w-apply-list.wxss */
+
+page{
+  background: #F9F9F9;
+}
+
+.subBlock{
+  padding: 6rpx 12rpx;
+  height: 150rpx;
+  background: #fff;
+  margin-bottom: 1px;
+}
+
+.title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.htext{
+  font-size: 10pt;
+  color: gray;
+}
+
+.tips{
+  color: #ee294a;
+  font-size: 10pt;
+}
+
+.yes-btn,
+.no-btn{
+  width: 120rpx;
+  height: 60rpx;
+  font-size: 12pt;
+  margin-left: 12rpx;
+  border-radius: 8rpx;
+}
+
+.yes-btn{
+  border: #008000 1px solid;
+  color: #008000;
+}
+
+.no-btn{
+  border: #ee294a 1px solid;
+  color: #ee294a;
+}
+
+.tabBar{
+  height: 100rpx;
+  font-size: 13pt;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.tabItem{
+  height: 100%;
+}
+
+.tabItem.active{
+  background: #fff;
+  border-bottom: #ee4444 2px solid;
+}
+
+.no_data_tip{
+  color: gray;
+  font-size: 12pt;
+  line-height: 128rpx;
+}
+
+.detail-btn-block{
+  width: 100%;
+  margin: 32rpx 0;
+}
+
+.detail-btn-block .yes-btn-huge,
+.detail-btn-block .no-btn-huge,
+.detail-btn-block .back-btn-huge{
+  width: 180rpx;
+  height: 80rpx;
+  font-size: 13pt;
+  border-radius: 8rpx;
+  background: #fff;
+}
+
+.detail-btn-block .yes-btn-huge{
+  border: #008000 1px solid;
+  color: #008000;
+}
+
+.detail-btn-block .no-btn-huge{
+  border: #ee294a 1px solid;
+  color: #ee294a;
+}
+
+.detail-btn-block .back-btn-huge{
+  border: gray 1px solid;
+  color: gray;
+}
+
+.tp-block{
+  width: 100%;
+  padding: 16rpx;
+  background: #fff;
+}
+
+.tp-block rich-text{
+  height: 512rpx;
+  font-size: 11pt;
+  word-break: break-all;
+}
+
+.tp-block button{
+  margin-top: 64rpx;
+}
+
+.uploadImg{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 16rpx 16rpx 0 0;
+}
+
+.uploadImgBlock{
+  width: 100%;
+  white-space: nowrap;
+}

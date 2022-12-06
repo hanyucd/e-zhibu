@@ -1,0 +1,57 @@
+/* pages/article-list/article-list.wxss */
+.list .title{
+  width: 100%;
+  height: 84rpx;
+  font-size: 13pt;
+  padding: 0 16rpx;
+  background: #fff;
+  margin-bottom: 1px;
+}
+
+.list .content{
+  height: 212rpx;
+  padding: 16rpx;
+  background: #fff;
+  margin-bottom: 1px;
+}
+
+.list .content .s-icon{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 16rpx;
+}
+
+.list .content .sub-title{
+  height: 100rpx;
+  font-size: 12pt;
+}
+
+.list .content .sub-content{
+  height: 152rpx;
+  margin-top: 16rpx;
+  font-size: 11pt;
+  color: #aaa;
+}
+
+.list .content .date{
+  color: #aaa;
+  font-size: 11pt;
+  margin-top: 16rpx;
+}
+
+.cube{
+  width: 32rpx;
+  height: 32rpx;
+  background: rgb(250, 116, 116);
+  margin-left: 16rpx;
+  border-radius: 14rpx;
+}
+
+.list .title{
+  height: 96rpx;
+  padding: 0 16rpx;
+  font-size: 12pt;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

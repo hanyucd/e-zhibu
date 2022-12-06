@@ -1,0 +1,44 @@
+<!--pages/w-apply-list/w-apply-list.wxml-->
+<view wx:if='{{showDetail}}'>
+  <view class='tp-block'>
+    <text class='htext title'>{{w_apply_list[checkTab][checkItemIndex].username}} 于 {{w_apply_list[checkTab][checkItemIndex].uploadDate}} 提交审核
+    </text>
+
+    <rich-text>{{w_apply_list[checkTab][checkItemIndex].content}}</rich-text>
+
+    <text class='tips'>[共 {{w_apply_list[checkTab][checkItemIndex].imgs.length}} 张图片]</text>
+    <scroll-view class='uploadImgBlock' scroll-x scroll-with-animation>
+      <image class='uploadImg' wx:for='{{w_apply_list[checkTab][checkItemIndex].imgs}}' 
+            data-id='{{index}}' src='{{item}}' bindtap='onPreviewImg' />
+    </scroll-view>
+  </view>
+
+  <view class='detail-btn-block flex-row flex-y-center flex-space-around'>
+    <view class='yes-btn-huge flex-x-center flex-y-center' data-cid='{{checkItemIndex}}' bindtap='yesBtn'>通过</view>
+    <view class='no-btn-huge flex-x-center flex-y-center' data-cid='{{checkItemIndex}}' bindtap='noBtn'>拒绝</view>
+    <view class='back-btn-huge flex-x-center flex-y-center' bindtap='backBtn'>返回</view>
+  </view>
+</view>
+<view wx:else>
+  <view class='tabBar flex-row'>
+    <view class='flex-grow-1 tabItem {{checkTab==0?"active":""}}' bindtap='toggleTab' data-id='0'>思想汇报</view>
+    <view class='flex-grow-1 tabItem {{checkTab==1?"active":""}}' bindtap='toggleTab' data-id='1'>活动心得</view>
+  </view>
+  <view class='mainBlock flex-col'>
+    <view class='no_data_tip flex-x-center' wx:if='{{w_apply_list[checkTab].length<1}}'>
+      此处暂时没有人需要审核噢~
+    </view>
+    <view class='subBlock flex-row flex-y-center' wx:for='{{w_apply_list[checkTab]}}'>
+      <view class='flex-col flex-grow-1' data-id='{{index}}' bindtap='onClickDetail'>
+        <text class='title'>{{item.content}}</text>
+        <text class='htext title'>{{item.username}} {{item.uploadDate}}</text>
+        <text class='tips'>[共 {{item.imgs.length}} 张图片]</text>
+      </view>
+      <view class='flex-row flex-grow-0 flex-y-center'>
+        <view class='yes-btn flex-x-center flex-y-center' data-cid='{{index}}' bindtap='yesBtn'>通过</view>
+        <view class='no-btn flex-x-center flex-y-center' data-cid='{{index}}' bindtap='noBtn'>拒绝</view>
+        <image class='more-icon' src='/images/svg/more.svg'></image>
+      </view>
+    </view>
+  </view>
+</view>

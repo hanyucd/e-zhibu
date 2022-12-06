@@ -1,0 +1,103 @@
+/**index.wxss**/
+
+page {
+  background: #F9F9F9;
+}
+
+.banner {
+  width: 100%;
+  height: 320rpx;
+}
+
+.banner navigator {
+  font-size: 0;
+  position: relative;
+  height: 100%;
+}
+
+.banner .slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.direct-navbar{
+  width: 100%;
+  height: 200rpx;
+  background: #fff;
+}
+
+.direct-navbar text{
+  font-size: 11pt;
+  margin-top: 8rpx;
+}
+
+.direct-navbar .n-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.broadcast{
+  width: 100%;
+  height: 160rpx;
+  background: #fff;
+  margin: 16rpx 0;
+  padding-right: 16rpx;
+}
+
+.broadcast .b-icon{
+  width: 300rpx;
+  height: 160rpx;
+  margin-right: 16rpx;
+}
+
+.broadcast .title{
+  height: 100rpx;
+  font-size: 10pt;
+}
+
+.broadcast .content,
+.broadcast .date{
+  height: 60rpx;
+  font-size: 9pt;
+  color: #aaa;
+}
+
+.touched-bar{
+  height: 92rpx;
+  width: 100%;
+  background: #fff;
+  padding: 0 16rpx;
+  margin-bottom: 1px;
+}
+
+.touched-bar .title{
+  margin-left: 12rpx;
+  font-size: 12pt;
+  color: #DD1727;
+}
+
+.touched-bar .text{
+  margin-left: 16rpx;
+  font-size: 10pt;
+  color: #aaa;
+}
+
+.touched-bar .t-icon{
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.grid-index{
+  height: 200rpx;
+  width: 100%;
+}
+
+.grid-index .g-icon{
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.grid-index .text{
+  font-size: 10pt;
+  margin-top: 16rpx;
+}

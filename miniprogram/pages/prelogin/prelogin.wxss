@@ -1,0 +1,45 @@
+/* pages/prelogin/prelogin.wxss */
+
+page{
+  height: 100%;
+  background: #F9F9F9;
+  padding: 32rpx;
+}
+
+.title{
+  width: 140rpx;
+  font-size: 20pt;
+  margin-bottom: 32rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 4px solid #ee4444;
+}
+
+.subTitle{
+  color: grey;
+  font-size: 11pt;
+  margin-bottom: 64rpx;
+}
+
+.prelogin-border input{
+  height: 72rpx;
+  font-size: 12pt;
+  padding: 0 16rpx;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 16rpx;
+}
+
+.prelogin-border button{
+  margin-top: 78rpx;
+}
+
+.autoLogin{
+  height: 100%;
+  font-size: 22pt;
+  color: #ccc;
+}
+
+.autoLogin image{
+  width: 160rpx;
+  height: 160rpx;
+}

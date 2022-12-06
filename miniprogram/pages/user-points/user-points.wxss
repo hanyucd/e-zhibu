@@ -1,0 +1,70 @@
+/* pages/user-points/user-points.wxss */
+page{
+
+}
+
+.top-bar{
+  width: 100%;
+  height: 300rpx;
+  margin: 32rpx 0; 
+}
+
+.top-bar .cir{
+  width: 256rpx;
+  height: 256rpx;
+  border-radius: 256rpx;
+  background: #ee4444;
+}
+
+.top-bar .cir .title{
+  color: #f0f0f0;
+  font-size: 12pt;
+}
+
+.top-bar .cir .point{
+  color: #fff;
+  font-size: 26pt;
+}
+
+.content{
+  font-size: 11pt;
+  border-top: #F9F9F9 1px solid;
+}
+
+.content .subBlock{
+  height: 96rpx;
+  padding: 16rpx;
+  border-bottom: #F9F9F9 1px solid;
+}
+
+.content .subBlock .title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content .subBlock .date{
+  font-size: 10pt;
+  color: gray;
+}
+
+.content .subBlock .i-tips{
+  margin-left: 16rpx;
+  color: orange;
+}
+
+.content .subBlock .pass-tips{
+  margin-left: 16rpx;
+  color: green;
+}
+
+.content .subBlock .deny-tips{
+  margin-left: 16rpx;
+  color: red;
+}
+
+.htext{
+  margin-top: 16rpx;
+  font-size: 11pt;
+  color: gray;
+}

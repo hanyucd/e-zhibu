@@ -1,0 +1,17 @@
+<!--pages/show/show.wxml-->
+<include src="/commons/navbar/navbar" />
+
+<view class='after-navbar'>
+
+  <view class='group-list flex-col' wx:for='{{group_show_list}}'>
+    <view class='title flex-y-center'>{{item.title}}</view>
+    <view class='flex-row flex-wrap'>
+      <navigator class='sub-list flex-row flex-y-center' url='{{sitem.nav_url}}' 
+                wx:for='{{item.list}}' wx:for-item='sitem' style='border-right: {{index==0?1:0}}px solid #F9F9F9;'>
+        <image class='g-icon' src='{{sitem.image_url}}'></image>
+        <text class='text'>{{sitem.text}}</text>
+      </navigator>
+    </view>
+  </view>
+
+</view>

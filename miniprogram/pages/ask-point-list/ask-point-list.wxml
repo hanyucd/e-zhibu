@@ -1,0 +1,21 @@
+<!--pages/ask-point-list/ask-point-list.wxml-->
+<navigator class='top-tip-box flex-row flex-y-center' url='/pages/user-points/user-points'>
+  <image src='/images/svg/point-dir.svg' style='width: 110rpx; height: 110rpx; margin-right: 16rpx;'></image>
+  <view class='flex-col flex-grow-1'>
+    <text>申请积分记录</text>
+    <text style='font-size: 11pt; margin-top: 8rpx;'>立即查看</text>
+  </view>
+  <image class='more-icon flex-grow-0' src='/images/svg/more.svg'></image>
+</navigator>
+
+<view class='group-list flex-col' wx:for='{{list}}'>
+  <view class='flex-row flex-y-center'>
+    <view class='cube'></view>
+    <view class='title flex-y-center'>{{item.title}}</view>
+  </view>
+  <navigator class='sub-list flex-row flex-y-center' url='{{sitem.nav_url}}' 
+            wx:for='{{item.list}}' wx:for-item='sitem' style='margin-bottom: {{index==0?1:0}}px;'>
+    <text class='text flex-grow-1'>【项目{{index+1}}】{{sitem.text}}</text>
+    <image class='more-icon flex-grow-0' src='/images/svg/more.svg'></image>
+  </navigator>
+</view>

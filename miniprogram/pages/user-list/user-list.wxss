@@ -1,0 +1,18 @@
+/* pages/user-list/user-list.wxss */
+.content{
+  padding: 0 16rpx;
+}
+
+.content .displayBlock{
+  height: 80rpx;
+}
+
+.content .username{
+  
+}
+
+.content .classname{
+  font-size: 11pt;
+  color: gray;
+  margin-left: 24rpx;
+}

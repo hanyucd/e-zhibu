@@ -1,0 +1,31 @@
+/* pages/show/show.wxss */
+page {
+  background: #F9F9F9;
+}
+
+.group-list{
+  width: 100%;
+}
+
+.group-list .title{
+  height: 86rpx;
+  padding: 0 16rpx;
+  font-size: 13pt;
+}
+
+.group-list .sub-list{
+  width: 50%;
+  height: 128rpx;
+  padding: 0 32rpx;
+  background: #fff;
+}
+
+.group-list .sub-list .g-icon{
+  width: 64rpx;
+  height: 64rpx;
+  margin-right: 16rpx;
+}
+
+.group-list .sub-list .text{
+  font-size: 11pt;
+}

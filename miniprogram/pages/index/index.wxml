@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<include src="/commons/navbar/navbar" />
+
+<view class='after-navbar'>
+
+  <swiper class="banner" autoplay="true" interval="5000" duration="300" indicator-dots="true" circular="true" 
+        wx:if='{{banner_list.length>0}}'>
+    <block wx:for="{{banner_list}}">
+      <swiper-item>
+        <navigator url="{{item.nav_url}}">
+          <view class="slide-title">{{item.text}}</view>
+          <image src="{{item.image_url}}" class="slide-image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='direct-navbar flex-row flex-y-center' wx:if='{{direct_navbar_list.length>0}}'>
+    <navigator wx:for='{{direct_navbar_list}}' class='flex-col flex-grow-1 flex-y-center' url="{{item.nav_url}}">
+      <image src="{{item.image_url}}" class='n-icon'/>
+      <text>{{item.text}}</text>
+    </navigator>
+  </view>
+
+  <navigator class='broadcast flex-row flex-y-center' wx:if='{{broadcast}}' url="{{broadcast.nav_url}}">
+    <image class='b-icon' src='{{broadcast.image_url}}'></image>
+    <view class='flex-col flex-grow-1'>
+      <text class='title flex-y-center'>{{broadcast.title}}</text>
+      <view class='flex-row'>
+        <text class='content flex-grow-1'>{{broadcast.content}}</text>
+        <text class='date flex-grow-0'>{{broadcast.date}}</text>
+      </view>
+    </view>
+    <image class='more-icon' src='/images/svg/more.svg'></image>
+  </navigator>
+
+  <view class='touched-bar flex-row flex-y-center'>
+    <image class='t-icon' src='/images/svg/touched.svg'></image>
+    <view class='flex-grow-1'>
+      <text class='title'>温暖数工</text>
+      <text class='text'>{{touched.text}}</text>
+    </view>
+    <image class='more-icon' src='/images/svg/more.svg'></image>
+  </view>
+
+  <view class='grid-index flex-y-center' wx:if='{{grid_index_list.length>0}}' style='display: flex; flex-wrap: wrap; margin-bottom: 50%;'>
+    <navigator class='flex-col flex-y-center' wx:for='{{grid_index_list}}' 
+              style='border-right: {{index==3?0:1}}px solid #F9F9F9; border-bottom: {{index>4?0:1}}px solid #F9F9F9; width: 25%; padding: 24rpx; background: #fff; ' url='{{item.nav_url}}'>
+      <image class='g-icon' src='{{item.image_url}}'></image>
+      <text class='text' style='color: {{item.text_color}}'>{{item.text}}</text>
+    </navigator>
+  </view>
+
+</view>

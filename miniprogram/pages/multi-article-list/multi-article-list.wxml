@@ -1,0 +1,19 @@
+<!--pages/article-list/article-list.wxml-->
+<view class='list flex-col' wx:if='{{list.length>0}}'>
+  <view wx:for='{{list}}'>
+    <navigator class='flex-row flex-y-center' url="/pages/article-list/article-list?nav={{item.childs[0].type}}">
+      <view class='cube'></view>
+      <view class='title flex-y-center'>{{item.group}}</view>
+      <image class='more-icon' style="margin-right: 16rpx;" src='/images/svg/more.svg'></image>
+    </navigator>
+    <navigator class='content flex-row' wx:for='{{item.childs}}' data-index='{{index}}' bindtap='showDetail'
+            style='border-bottom: {{index!=item.childs.length?1:0}}px solid #F9F9F9;' data-aid='{{item._id}}'>
+      <image class='s-icon flex-grow-0' src='{{item.images[0]}}' wx:if='{{item.images.length>0}}'></image>
+      <view class='flex-col flex-grow-1'>
+        <text class='date flex-grow-1'>{{item.time}}</text>
+        <text class='sub-title flex-grow-1 text-multi-line'>{{item.title}}</text>
+        <!-- <text class='sub-content text-multi-line'>{{item.describe}}</text> -->
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,76 @@
+/* pages/ask-point-detail/ask-point-detail.wxss */
+page {
+  width: 100%;
+  padding: 32rpx;
+  background: #F9F9F9;
+}
+
+.tp-block .oname{
+  height: 76rpx;
+  padding: 16rpx;
+  font-size: 12pt;
+  text-align: center;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.tp-block button{
+  margin-top: 64rpx;
+}
+
+.tp-block .picker{
+  height: 76rpx;
+  padding: 16rpx;
+  font-size: 12pt;
+  margin-top: 16rpx;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.uploadImg{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.uploadImgBlock{
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 32rpx;
+}
+
+.uploadImgBlock .subBlock{
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+  display: inline-block;
+  margin-right: 16rpx;
+}
+
+.uploadImgBlock .delete{
+  right: 0;
+  width: 48rpx;
+  height: 48rpx;
+  opacity: 0.7;
+  position: absolute;
+  margin: 4rpx 4rpx 0 0;
+}
+
+.cancel-mask{
+  background: black;
+}
+
+.checkbox {
+  width: 34rpx;
+  height: 34rpx;
+  margin-right: 8rpx;
+}
+
+.selfcheck-block{
+  padding: 32rpx;
+  font-size: 11pt;
+  background: #fff;
+  color: gray;
+  border-radius: 8rpx;
+  text-align: center;
+  margin-top: 16rpx;
+}

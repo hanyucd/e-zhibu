@@ -1,0 +1,4 @@
+/* pages/online-payment/online-payment.wxss */
+page{
+  height: 100%;
+}

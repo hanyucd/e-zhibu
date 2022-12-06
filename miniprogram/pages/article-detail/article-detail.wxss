@@ -1,0 +1,45 @@
+/* pages/article-detail/article-detail.wxss */
+
+page {
+    width: 100%;
+}
+
+.title-block {
+    padding: 32rpx 16rpx;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.title-block .subTitle {
+    font-size: 10pt;
+    color: gray;
+    margin-top: 16rpx;
+}
+
+.content-block {
+    padding: 32rpx 16rpx;
+    font-size: 12pt;
+}
+
+.content-block .pic {
+    width: 100%;
+    margin-top: 16rpx;
+}
+
+.content-block .audio-block {
+    margin-bottom: 48rpx;
+}
+
+.content-block .audio-block .btn {
+    width: 220rpx;
+    height: 80rpx;
+    border-radius: 8rpx;
+    padding: 8rpx 4rpx;
+    border: #008000 1px solid;
+    color: #008000;
+}
+
+.delBtn {
+    margin-top: 8rpx;
+    font-size: 10pt;
+    color: rgba(255, 0, 0, 0.521);
+}
